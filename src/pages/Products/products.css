@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+:root{
+    --white : #f5f1f1;
+    --grey : #C4C4C480;
+}
+.product-container {
+    display: flex;
+}
+.product{
+    width: 80vw;
+    margin: 0px auto;
+    background-color: var(--white)
+ }
+ 
+ .heading {
+    margin-bottom: 2rem;
+    padding: 2rem 2rem 0 2rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width:1000px){
+    .product-cards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .product-cards{
+        grid-template-columns: 1fr;
+    }
+}
+.product-cards {
+    max-width: 50rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 2rem;
+    text-align: center; 
+}
+.example-div{
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.card {
+    height: max-content;
+    width: 300px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+     rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+     transition: all .3s ease-in;
+}
+.ecomm {
+    width: 230px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    position: relative;
+}
+.product-image {
+    position: relative;
+    text-align: center;
+    height: 250px;
+    overflow: hidden;
+    background-color: lightgrey;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.card-badge {
+    position: absolute;
+    top: 20px;
+    left: -1px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    padding: 0.2rem 0.5rem;
+    transition: all .2s ease-in-out;
+} 
+.ico {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 50px;
+    color: #dc143c;
+    background-color: var(--white);
+    padding: 0.45rem;
+}
+.ico > i { 
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+}
+.ecomm .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+}
+.ecomm .card-price {
+    padding: 0.2rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+   
+}
+.price-now {
+    font-weight: 400;
+    padding-right: 7px;
+}
+.price-before {
+    font-weight: 300;
+    text-decoration: line-through;
+    padding-right: 5px;
+    opacity: 0.7;
+}
+.discount {
+    font-size: 0.7rem;
+    color: red;
+}
+.ecomm .btn {
+    margin-right: 2.5rem;
+    border: 1px solid  #ec4899;
+}
+.btn-primary {
+    background-color: #ec4899;
+    cursor: pointer;
+    color: black;
+    margin: 0.7rem;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: none;
+
+}
+.btn-primary:hover {
+    background-color: var(--grey);
+}
