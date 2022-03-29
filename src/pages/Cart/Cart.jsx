@@ -1,15 +1,16 @@
-import '../Landing-page/landingpage.css'
-import '../Products/products.css'
+
 import './cart.css'
 import { Footer, Navbar } from '../../components';
 import img2 from '../../assets/images/product4.jpg'
+
 export default function Cart(){
     return (   
+      <div>
+         <Navbar />
     
         <div className="container" >
-        
-    
-    <main className="cart-container">
+          
+     <main className="cart-container">
     <h3 className="content-heading text-center">MY Cart</h3>
     <div className="cart">
       <div className="cart-horizontal">
@@ -56,7 +57,10 @@ export default function Cart(){
     </div>
     </div>
        </main>
-       
+      
        </div>
+       <Footer />
+       </div>
+        
       )
 }
