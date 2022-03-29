@@ -1,8 +1,10 @@
-import '../Landing-page/landingpage.css'
+import { Footer, Navbar } from '../../components'
+
 import './auth.css'
 export default function Signup() {
     return(
-        
+        <div>
+            <Navbar />
         <main className="container">
         <div className="login-form">
             <div className="login-title">
@@ -28,6 +30,7 @@ export default function Signup() {
             </div>
         </div>
     </main> 
-    
+    <Footer />
+    </div>
     )
 }

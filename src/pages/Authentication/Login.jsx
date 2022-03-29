@@ -1,9 +1,10 @@
 
- 
+ import {Navbar, Footer} from '../../components'
  import './auth.css'
 export default function Login() {
     return (
-        
+        <div>
+            <Navbar/>
     <main className="container">
         
         <div className="login-form">
@@ -32,5 +33,7 @@ export default function Login() {
             </div>
         </div>
     </main>
+    <Footer />
+    </div>
      )
 }
