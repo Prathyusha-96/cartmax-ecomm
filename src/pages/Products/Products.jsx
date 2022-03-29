@@ -1,4 +1,4 @@
-import { Navbar } from '../../components'
+import { Footer, Navbar } from '../../components'
 import img1 from '../../assets/images/product6.jpg'
 import img2 from '../../assets/images/product4.jpg'
 import img3 from '../../assets/images/product3.jpg'
@@ -6,14 +6,16 @@ import img4 from '../../assets/images/product2.jpg'
 import img5 from '../../assets/images/product1.jpg'
 import img6 from '../../assets/images/product5.jpg'
 import { Filter } from '../../pages'
-import '../Landing-page/landingpage.css'
-import '../Products/components/filter.css'
-import './products.css' 
 
-export default function Products (){
+ import './products.css' 
+
+export default function Products() {
     return (
+        <div>
+            <Navbar />
         <div className="product-container">
-            <Filter />
+            
+<Filter />
         <main className="product">
       <h4 className="heading fw-500">
         Showing All Products
@@ -134,6 +136,8 @@ export default function Products (){
 
 </div>
  </main>
+ </div>
+ <Footer />
  </div>
        
     )
