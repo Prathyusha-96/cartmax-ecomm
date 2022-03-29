@@ -1,10 +1,11 @@
-import { Footer, Navbar } from '../../components';
+import { Link } from "react-router-dom";
+
 
 import img1 from "../../assets/images/product6.jpg"
 import img2 from "../../assets/images/product2.jpg"
 import img3 from "../../assets/images/product5.jpg"
 import img4 from "../../assets/images/product1.jpg"
-import img5 from "../../assets/images/product7.jpg"
+import img5 from "../../assets/images/product10.jpg"
 import img6 from "../../assets/images/product3.jpg"
 import img7 from "../../assets/images/product9.jpg"
 
@@ -13,15 +14,14 @@ import './landingpage.css'
 
 export default function Landingpage() {
 return (
-      <div>
-        <Navbar/>
+
         <div className="container">
          <section id="hero">
             <div className="hero-overlay hero-image">
               <div className="hero-content">
                 <h1 className="hero-heading">Welcome to CartMax</h1>
                 <h3 className="hero-subheading">For all Fashion Wear</h3>
-                <a href="/pages/products.html" className="btn btn-default">Shop Now</a>
+                <Link to="/Products" className="btn btn-default">Shop Now</Link>
               </div>
               </div>
              
@@ -77,8 +77,7 @@ return (
             </section>
             </section>
           </div>
-         < Footer /> 
-          </div>
+
 
     )
 }
