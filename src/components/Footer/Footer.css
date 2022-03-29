@@ -8,16 +8,16 @@
 }
 
 .footer-text {
-    font-size: 1.3rem;
-    padding: 1rem 0;
+    font-size: 1rem;
+    padding: 0.5rem 0;
 }
 
 .footer-icon {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     cursor: pointer;
 }
 
 .icon {
-    font-size: 1.85rem;
-    padding: 0 1.2rem;
+    font-size: 1rem;
+    padding: 0 1rem;
 }
