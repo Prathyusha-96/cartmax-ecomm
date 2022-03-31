@@ -1,10 +1,10 @@
-import { Footer, Navbar } from '../../components'
 
+
+import { Link } from 'react-router-dom'
 import './auth.css'
 export default function Signup() {
     return(
-        <div>
-            <Navbar />
+
         <main className="container">
         <div className="login-form">
             <div className="login-title">
@@ -26,11 +26,11 @@ export default function Signup() {
                 <button className="btn btn-primary">Create New Account</button>
             </div>
             <div className="text-center">
-            <span>Allready have an Account  <a className="login-link fw-400" href="/pages/login.html">Login</a></span>
+            <span >Already have an Account 
+             <Link  to="/Login" className="login-link fw-400">Login</Link></span>
             </div>
         </div>
     </main> 
-    <Footer />
-    </div>
+
     )
 }

@@ -24,26 +24,25 @@
     height: max-content;
     margin: auto;
 }
-
-.btn {
+.btn{
     font-weight: 600;
-    min-width: 50px;
-    width: min-content;
-    cursor: pointer;
-    padding: 0.8rem;
+    color: white;
+    min-width: 100px;
+    padding: .8rem ;
     border-radius: 4px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    transition: all 0.3s ease-in-out 0s;
-    margin: 10px;
-    justify-content: center; 
-    align-content: center;
-} 
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 9px;
+    transition: all .3s ease-in-out;
+}
 .btn-default {
-    background-color: var(--primary-color);
-    color: cornsilk;
+   
+    background-color: #db2777;
+    color: white;
+}
+.btn-default:hover {
+    background-color: var(--grey-color);
+    color: white;
 }
 
 .hero-overlay::before {

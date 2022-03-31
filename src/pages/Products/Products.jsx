@@ -1,4 +1,6 @@
-import { Footer, Navbar } from '../../components'
+
+
+
 import img1 from '../../assets/images/product6.jpg'
 import img2 from '../../assets/images/product4.jpg'
 import img3 from '../../assets/images/product3.jpg'
@@ -11,8 +13,7 @@ import { Filter } from '../../pages'
 
 export default function Products() {
     return (
-        <div>
-            <Navbar />
+
         <div className="product-container">
             
 <Filter />
@@ -137,8 +138,7 @@ export default function Products() {
 </div>
  </main>
  </div>
- <Footer />
- </div>
+ 
        
     )
 }

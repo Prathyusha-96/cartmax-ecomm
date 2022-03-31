@@ -2,11 +2,9 @@ import './Wishlist.css'
 import img1 from '../../assets/images/product6.jpg'
 import img2 from '../../assets/images/product3.jpg'
 import img3 from '../../assets/images/product5.jpg'
-import { Footer, Navbar } from '../../components'
 export default function Wishlist() {
     return (
-        <div>
-            <Navbar />
+
         <main className="wishlist-container">
         <h3 className="heading">My Wishlist</h3>
         <div className="wishlist">
@@ -68,7 +66,6 @@ export default function Wishlist() {
             </div>
             </div>
              </main>
-             <Footer />
-             </div>
+
     )
 }

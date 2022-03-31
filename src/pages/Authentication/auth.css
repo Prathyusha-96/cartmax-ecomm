@@ -63,7 +63,7 @@ input[type=password] {
 }
 .btn {
     font-weight: 600;
-    min-width: 150px;
+    min-width: 100px;
     width: max-content;
     cursor: pointer;
     padding: 0.8rem;
@@ -82,25 +82,7 @@ input[type=password] {
     color: cornsilk;
 }
 
-/* .btn {
-    font-weight: 600;
-    min-width: 100px;
-    width: max-content;
-    cursor: pointer;
-    padding: 0.8rem;
-    border-radius: 4px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    transition: all 0.3s ease-in-out 0s;
-    margin: 10px;
 
-}
-.btn-primary {
-    background-color: var(--secondary-color);
-    color: cornsilk;
-} */
 .login-link {
     font-size: .9rem;
     color: var(--secondary-color);

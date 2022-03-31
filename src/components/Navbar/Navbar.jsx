@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 import './Navbar.css';
 
@@ -7,7 +8,7 @@ export default function Navbar() {
     
     <nav>
     <div className="left-nav">
-        <a href="/index.html">CartMax</a>
+        <Link to="/">CartMax</Link>
       
  </div>
  <ul className="navbar-search">
@@ -16,17 +17,21 @@ export default function Navbar() {
   </ul>
     <ul className="right-nav">
         
-        <li className="badge"><a href="../../login.jsx" >
+        <li className="badge">
+            <Link to="/Login" >
             <i className="badge-icon fa-solid fa-user"></i>
-            </a></li>
-        <li className="badge"><a href="/pages/cart.html">
+            </Link>
+            </li>
+        <li className="badge">
+            <Link to="/Cart">
             <i className="badge-icon fas fa-cart-plus"></i>
             <span className="badge-number">0</span> 
-        </a></li>
-        <li className="badge"><a href="/pages/wishlist.html">
+        </Link></li>
+        <li className="badge">
+            <Link to="/Wishlist">
             <i className="badge-icon fas fa-heart" aria-hidden="true"></i>
             <span className="badge-number">0</span> 
-        </a></li>
+        </Link></li>
   
     </ul>
 </nav>

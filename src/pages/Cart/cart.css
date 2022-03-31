@@ -76,12 +76,19 @@
 
 .product-button{
     padding-top: 1rem;
+   
 }
 
-.btn {
+.btn-primary {
     margin:.7rem 0;
-    width: 100%;
+     width: 90%;
+
+
 }
+.btn-secondary {
+     color: black;
+}
+
 .cart-vertical {
     width: 25rem;
     height: 22rem;
