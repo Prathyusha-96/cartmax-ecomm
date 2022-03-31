@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import { Footer, Navbar } from "./components/index";
-import { Login, Signup, Landingpage, Cart, Wishlist, Products } from "./pages/index";
+import { Footer, Navbar } from "./components";
+import { Login, Signup, Landingpage, Cart, Wishlist, Products } from "./pages";
 
 function App() {
   return (
