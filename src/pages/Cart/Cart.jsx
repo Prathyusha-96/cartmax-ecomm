@@ -1,12 +1,10 @@
 
 import './cart.css'
-import { Footer, Navbar } from '../../components';
+
 import img2 from '../../assets/images/product4.jpg'
 
 export default function Cart(){
     return (   
-      <div>
-         <Navbar />
     
         <div className="container" >
           
@@ -59,8 +57,7 @@ export default function Cart(){
        </main>
       
        </div>
-       <Footer />
-       </div>
+
         
       )
 }
