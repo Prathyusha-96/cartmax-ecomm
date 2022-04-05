@@ -1,7 +1,7 @@
 import './ProductListing.css' 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Filter } from "./Filter";
+import { Filter } from "./components/Filter";
 import { ProductCard } from "./components/ProductCard";
 
 const ProductListing = () => {
