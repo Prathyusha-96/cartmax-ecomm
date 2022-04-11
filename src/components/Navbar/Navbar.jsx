@@ -1,27 +1,46 @@
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/context/auth-context";
 
-import './Navbar.css';
+const Navbar = () => {
+    const navigate = useNavigate();
+    const { authState, authDispatch } = useAuth();
+    const userName = authState.user;
 
-export default function Navbar() {
+    const checkStatus = (userName) => {
+        return userName ? "Logout" : "Login";
+    }
+    const logoutHandler = () => {
+        navigate("/");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        authDispatch({ type: "LOG_OUT"})
+    }
+    const userHandler = async (type) => {
+        type === "Login" ? navigate("/login") : logoutHandler();
+    }
     return (
-
-    
-    <nav>
+<nav>
     <div className="left-nav">
         <Link to="/">CartMax</Link>
-      
- </div>
- <ul className="navbar-search">
+       </div>
+     <ul className="navbar-search">
     <input className="search-box" type="search" placeholder="Search" /><span className="search-icon">
    <i className="fas fa-search" aria-hidden="true"></i></span>
   </ul>
     <ul className="right-nav">
         
-        <li className="badge">
-            <Link to="/Login" >
-            <i className="badge-icon fa-solid fa-user"></i>
-            </Link>
-            </li>
+        <li>
+            
+          {/* <button className="btn-login" onClick={() => userHandler(checkStatus(userName))}>{checkStatus(userName)}</button>  */}
+            
+        <Link to="/Login" className=" btn btn-default"
+             onClick={() => userHandler(checkStatus(userName))}>
+            {checkStatus(userName)}
+             </Link>
+             </li>
         <li className="badge">
             <Link to="/Cart">
             <i className="badge-icon fas fa-cart-plus"></i>
@@ -37,3 +56,4 @@ export default function Navbar() {
 </nav>
     )
 }
+export {Navbar}
