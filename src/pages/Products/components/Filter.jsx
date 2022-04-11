@@ -1,3 +1,4 @@
+import React from "react";
 import { CategoryFilter } from "./Filters/CategoryFilter";
 import { PriceRangeFilter } from "./Filters/PriceRangeFilter";
 import { SortPriceFilter } from "./Filters/SortPriceFilter";

@@ -1,3 +1,4 @@
+import React from "react";
 const InStockFilter = ({ inStock, dispatch }) => {
     return (
             <div className="filter-sort">
