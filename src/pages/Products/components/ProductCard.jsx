@@ -1,13 +1,20 @@
 import React from "react";
+
 const ProductCard = ({
+    productId,
     productImg,
     productAlt,
     productBadge,
     productTitle,
     productPrice,
     productDiscount,
-    productRating
+    productRating,
+    checkAction,
+    checkRouteHandler,
+
   }) => {
+      
+     
       const ratingArray = [ 1, 2, 3, 4, 5 ]
     return (
         <div className="example-div">
@@ -20,6 +27,7 @@ const ProductCard = ({
           </button>
          {productBadge !== "None" ? <span className="card-badge">{productBadge} </span> : ""}
           <div className="card-title">{productTitle}</div>
+          <div className="price-rating-container">
           <div className="card-price">₹ {productPrice}
           <span className="discount">{productDiscount}</span>
           </div>
@@ -28,7 +36,8 @@ const ProductCard = ({
               <i key={item}  className={`${item <= Number(productRating) ? "fas" : "far"} fa-star`} ></i>
                ))}
             </div>
-          <button className="btn btn-primary">Add to Cart</button>
+            </div>
+          <button className="btn btn-primary" onClick={() => checkRouteHandler(productId)}>{checkAction(productId)}</button>
         </div>
       </div>
       );
