@@ -1,5 +1,9 @@
-export { categoryFilter } from "./categoryFilter";
-export { priceFilter } from "./priceFilter";
-export { sortData }  from "./sortData";
-export { inStockFilter } from "./inStockFilter";
-export { ratingFilter}  from "./ratingFilter";
+export { categoryFilter } from "./filters/categoryFilter";
+export { priceFilter } from "./filters/priceFilter";
+export { sortData }  from "./filters/sortData";
+export { inStockFilter } from "./filters/inStockFilter";
+export { ratingFilter}  from "./filters/ratingFilter";
+export { addToCartHandler } from "./cartHandlers/addToCartHandler";
+export { removeFromCartHandler } from "./cartHandlers/removeFromCartHandler";
+export { getCartBill } from "./cartHandlers/getCartBill";
+export { updateCartHandler } from "./cartHandlers/updateCartHandler";
