@@ -1,3 +1,4 @@
+import React from "react";
 const PriceRangeFilter = ({ rangeValue, dispatch }) => {
     return (
         

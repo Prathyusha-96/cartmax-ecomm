@@ -1,3 +1,4 @@
+import React from "react";
 const CategoryFilter = ({ mensClothing, womensClothing, womenAccessories, kidsClothing, dispatch }) => {
 
     return (

@@ -1,4 +1,4 @@
-
+import React from "react";
 import './cart.css'
 
 import img2 from '../../assets/images/product4.jpg'

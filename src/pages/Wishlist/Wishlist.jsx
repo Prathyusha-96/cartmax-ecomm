@@ -1,3 +1,4 @@
+import React from "react";
 import './Wishlist.css'
 import img1 from '../../assets/images/product6.jpg'
 import img2 from '../../assets/images/product3.jpg'
