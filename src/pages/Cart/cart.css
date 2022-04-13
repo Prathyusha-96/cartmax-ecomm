@@ -8,7 +8,7 @@
     min-width: 100%;
     width: max-content;
     min-height: 100vh;
-    height: max-contentss;
+    height: max-content;
     margin: auto;
 }
 
@@ -26,16 +26,25 @@
 
 .cart {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    margin: 1rem auto 3rem;
+    align-items: flex-start;
+    gap: 5rem;
 }
 
 .cart-horizontal {
     width: 30rem;
     height: 20rem;
     display: flex;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(122, 158, 194, 0.2) 0px 8px 24px;
+    margin-left: 3rem;
+    padding: 0.8rem;
 }
-
+ 
+  
+  .bill-container {
+    margin: 0.5rem auto;
+  }
 .cart-image {
     width: 20rem;
     height: 20rem;
@@ -44,28 +53,25 @@
     padding: 1rem;
     position: relative;
 }
-
-.cart-content {
-    padding: 1rem;
-}
-
  .card-title {
     font-weight: 500;
     font-size: 1.4rem;
+    margin-left: 1rem;
     padding: 1rem 0;
 }
-
 .card-price {
     font-weight: 700;
     font-size: 1.2rem;
+    margin-right: 5rem;
 }
 
 .cart-quantity {
     display: flex;
     align-items: center;
+    margin-left: 1.5rem;
     padding-top: 1rem;
 }
-.cart-quantity-number {
+.quantity {
     border: 1px solid var(--grey-color);
     padding: 0.1rem 0.4rem;
     padding-right: 0.6rem;
@@ -76,11 +82,9 @@
 
 .product-button{
     padding-top: 1rem;
-   
 }
-
 .btn-primary {
-    margin:.7rem 0;
+    margin: 0.8rem ;
      width: 90%;
 
 
@@ -88,13 +92,15 @@
 .btn-secondary {
      color: black;
 }
-
+.bill-container {
+    margin: 0.5rem auto;
+  }
 .cart-vertical {
     width: 25rem;
     height: 22rem;
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(122, 158, 194, 0.2) 0px 8px 24px;
     margin-left: 2rem;
     padding: 1rem;
 }
@@ -122,3 +128,6 @@
     margin: 1rem 0;
     width: auto;
 } 
+.btn-link-products {
+    background-color: var(--primary-color);
+}
