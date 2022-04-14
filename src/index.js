@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import { AuthProvider } from "./hooks/context/auth-context";
 import { FilterProvider } from "./hooks/context/filter-context";
 import { CartProvider }  from "./hooks/context/cart-context";
+import { WishlistProvider } from "./hooks/context/wishlist-context";
 
 
 // Call make Server
@@ -16,9 +17,11 @@ ReactDOM.render(
     <BrowserRouter>
     <AuthProvider>
     <CartProvider>
+      <WishlistProvider>
     <FilterProvider>
     <App/>
     </FilterProvider>
+    </WishlistProvider>
     </CartProvider>
     </AuthProvider>
     </BrowserRouter>
