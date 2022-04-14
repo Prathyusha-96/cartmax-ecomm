@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from '../../hooks/context/auth-context';
 
-const SignUp = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
     const { authDispatch } = useAuth();
@@ -146,4 +146,4 @@ const SignUp = () => {
     );
     }
 
-    export{ SignUp }
+    export{ Signup }
