@@ -1,6 +1,6 @@
 import React from "react"
 
-const CartItem = ({ cartId, cartImg, cartAlt, cartTitle, cartPrice, cartDiscount, cartQuantity, callRemoveFromCartHandler, callUpdateCartHandler }) => {
+const CartItem = ({ cartId, cartImg, cartAlt, cartTitle, cartPrice, cartDiscount, cartQuantity, callRemoveFromCartHandler, callUpdateCartHandler, callMoveToWishlistHandler  }) => {
 return (
      
      <div className="cart-horizontal">
@@ -24,7 +24,7 @@ return (
           </button>
           </div>
           <div className="product-button">
-            <button className="btn btn-primary">Move to Wishlist</button>
+            <button className="btn btn-primary" onClick={() => callMoveToWishlistHandler(cartId)}>Move to Wishlist</button>
             <button className="btn btn-secondary cart-remove-btn" onClick={() => callRemoveFromCartHandler(cartId)}>Remove From Cart</button>
           </div>
         </div>

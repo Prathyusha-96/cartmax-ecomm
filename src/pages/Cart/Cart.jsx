@@ -6,11 +6,13 @@ import { CartItem } from "./components/CartItem";
  import { CartBill } from "./components/CartBill";
 import { useCart } from "../../hooks/context/cart-context";
 import { useAuth } from "../../hooks/context/auth-context";
-import { getCartItemsService } from "../../services";
-import { removeFromCartHandler, updateCartHandler, getCartBill } from "../../utils";
+import { useWishlist } from "../../hooks";
+import { getCartItemsHandler, removeFromCartHandler, updateCartHandler, getCartBill, moveToWishlistHandler } from "../../utils";
+
 const Cart = () => {
   const { cartState, cartDispatch } = useCart();
   const { authState } = useAuth();
+  const { wishlistDispatch } = useWishlist();
   const { token } = authState;
   const { cart } = cartState;
   const { cartQuantity, itemsPrice, totalPrice } = getCartBill(cart);
@@ -23,21 +25,13 @@ const Cart = () => {
     removeFromCartHandler(_id, token, cartDispatch)
   }
 
-  const getCartItems = async () => {
-    try {
-      const response = await getCartItemsService(token);
-      if (response.status === 200) {
-        cartDispatch({ type: "GET_CART", payload: response.data.cart })
-      } else {
-        throw new Error();
-      }
-    }
-    catch (error) {
-      alert(error);
-    }
-  }
+ const callMoveToWishlistHandler = (_id) => {
+  const item = cart.find(item => item._id === _id);
+  moveToWishlistHandler(_id, item, wishlistDispatch, token, cartDispatch);
+ }
+  
 
-  useEffect(() => getCartItems(), []);
+  useEffect(() => getCartItemsHandler(token, cartDispatch), []);
 
     return (   
     <div className="container">
@@ -62,7 +56,8 @@ const Cart = () => {
                   cartQuantity={item.qty}
                   callRemoveFromCartHandler={callRemoveFromCartHandler}
                   callUpdateCartHandler={callUpdateCartHandler}
-                />
+                  callMoveToWishlistHandler={callMoveToWishlistHandler}
+                  />
               ))}
             </div>
         <div className="bill-container">
