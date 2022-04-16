@@ -40,7 +40,7 @@ const Cart = () => {
   useEffect(() => getCartItems(), []);
 
     return (   
-    <div className="container">
+    
       <div className="cart-container">
         <main className="empty-cart  text-center">
       {cart.length !== 0 ?
@@ -86,7 +86,7 @@ const Cart = () => {
         
         </main>
         </div>
-        </div>
+       
       
       )
      }
