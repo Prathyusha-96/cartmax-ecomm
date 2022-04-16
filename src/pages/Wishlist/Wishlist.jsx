@@ -1,72 +1,64 @@
 import React from "react";
 import './Wishlist.css'
-import img1 from '../../assets/images/product6.jpg'
-import img2 from '../../assets/images/product3.jpg'
-import img3 from '../../assets/images/product5.jpg'
-export default function Wishlist() {
-    return (
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { WishlistCard } from "./components/WishlistCard";
+import { useWishlist, useAuth, useCart } from "../../hooks";
+import { getWishlistItemsHandler, removeFromWishlistHandler, moveToCartHandler } from "../../utils";
+const Wishlist = () => {
+    const { wishlistState, wishlistDispatch } = useWishlist();
+    const { cartState, cartDispatch } = useCart();
+    const { authState } = useAuth();
+    const { token } = authState;
+    const { wishlist } = wishlistState;
 
-        <main className="wishlist-container">
-        <h3 className="heading">My Wishlist</h3>
-        <div className="wishlist">
-            <div className="product-card">
-         <div className="example-div">
-         <div className="card ecomm">
-             <div className="product-image">
-              <img src={img1} alt="card-pic"/>
-            </div>
-            <span className="product-favourite"><i className="fas fa-heart"></i></span>
+    const  callRemoveFromWishlistHandler = (_id) => {
+        removeFromWishlistHandler(_id, token, wishlistDispatch);
+      }
     
-            <div className="card-title">Denim Jacket</div>
-           <div className="card-price">
-             <span className="price-now">Rs.350</span>
-            <span className="price-before">Rs.899</span>
-            <span className="discount">(60% OFF)</span>
-           </div>
-           <button className="btn btn-primary">Move to Cart</button>
-       </div>
-      </div>
-      </div>
-      <div className="product-card">
-      <div className="example-div">
-          <div className="card ecomm">
-              <div className="product-image">
-               <img src={img2} alt="card-pic"/>
-              </div>
-              <span className="product-favourite">
-                <i className="fas fa-heart"></i>              
-              </span>
-              <div className="card-title">Puma Shoes</div>
-              <div className="card-price">
-                  <span className="price-now">Rs.350</span>
-                  <span className="price-before">Rs.899</span>
-                  <span className="discount">(60% OFF)</span>
-                </div>
-                <button className="btn btn-primary">Move to Cart</button>
-            </div>
-           </div>
-           </div>
-           <div className="product-card">
-            <div className="example-div">
-                <div className="card ecomm">
-                    <div className="product-image">
-                     <img src={img3} alt="card-pic"/>
-                    </div>
-                    <span className="product-favourite">
-                      <i className="fas fa-heart"></i>              
-                    </span>
-                    <div className="card-title">Kid's Wear</div>
-                    <div className="card-price">
-                        <span className="price-now">Rs.350</span>
-                        <span className="price-before">Rs.899</span>
-                        <span className="discount">(60% OFF)</span>
-                    </div>
-                    <button className="btn btn-primary">Move to Cart</button>
-                </div>
-            </div>
+      const callMoveToCartHandler = (_id) => {
+        const item = wishlist.find(item => item._id === _id);
+        moveToCartHandler(_id, item, token, cartState, cartDispatch);
+        removeFromWishlistHandler(_id, token, wishlistDispatch);
+    }
+
+    useEffect(() => getWishlistItemsHandler(token, wishlistDispatch), [])
+
+return (
+ <main className="wishlist-container">
+     <div className="example-div">
+    <div className="empty-cart">
+        {wishlist.length !== 0 ?
+        <>    
+        <h2 className="heading">My Wishlist</h2>
+        <section className="wishlist">
+
+        {wishlist.map(item => (
+              <WishlistCard
+                key={item._id}
+                cardId={item._id}
+                cardImg={item.image}
+                cardAlt={item.title}
+                cardTitle={item.title}
+                cardPrice={item.price}
+                callRemoveFromWishlistHandler={callRemoveFromWishlistHandler}
+                callMoveToCartHandler={callMoveToCartHandler}
+              />
+            ))}
+
+        </section>
+        </>
+         : <>
+         <h2>Your Wishlist is empty</h2>
+         <Link to="/products">
+           <button className="btn btn-primary btn-link-products">Start Exploring</button></Link>
+       </>}
             </div>
             </div>
              </main>
 
     )
 }
+export { Wishlist };
+            
+           

@@ -9,13 +9,13 @@ const ProductCard = ({
     productPrice,
     productDiscount,
     productRating,
-    checkAction,
-    checkRouteHandler,
+    checkCartAction,
+    checkCartRouteHandler,
+    checkWishlistAction,
+    checkWishlistActionHandler
 
   }) => {
-      
-     
-      const ratingArray = [ 1, 2, 3, 4, 5 ]
+     const ratingArray = [ 1, 2, 3, 4, 5 ]
     return (
         <div className="example-div">
          <div className="card ecomm">
@@ -23,8 +23,8 @@ const ProductCard = ({
           <img src={productImg} alt={productAlt} className="img-responsive" />
           </div>
            <button className="ico">
-          <i className="far fa-heart"></i>
-          </button>
+           <i className={`${checkWishlistAction(productId) === "Remove" ? "fas" : "far"} fa-heart`} onClick={() => checkWishlistActionHandler(productId)}></i>
+           </button>
          {productBadge !== "None" ? <span className="card-badge">{productBadge} </span> : ""}
           <div className="card-title">{productTitle}</div>
           <div className="price-rating-container">
@@ -37,7 +37,7 @@ const ProductCard = ({
                ))}
             </div>
             </div>
-          <button className="btn btn-primary" onClick={() => checkRouteHandler(productId)}>{checkAction(productId)}</button>
+          <button className="btn btn-primary" onClick={() => checkCartRouteHandler(productId)}>{checkCartAction(productId)}</button>
         </div>
       </div>
       );

@@ -4,19 +4,24 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/context/auth-context";
 import { useCart } from "../../hooks/context/cart-context";
+import { useWishlist } from "../../hooks/context/wishlist-context";
 
 const Navbar = () => {
     const navigate = useNavigate();
     const { authState, authDispatch } = useAuth();
-    const { cartState } = useCart()
+    const { cartState,cartDispatch } = useCart();
+    const { wishlistState, wishlistDispatch } = useWishlist();
     const userName = authState.user;
-    const cart = cartState.cart
+    const cart = cartState.cart;
+    const wishlist = wishlistState.wishlist
 
     const checkStatus = (userName) => {
         return userName ? "Logout" : "Login";
     }
     const logoutHandler = () => {
         navigate("/");
+        cartDispatch({ type: "EMPTY_CART" });
+        wishlistDispatch({ type: "EMPTY_WISHLIST"})
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         authDispatch({ type: "LOGOUT"})
@@ -28,6 +33,9 @@ const Navbar = () => {
     const CartRouteHandler = () => {
        authState.token ? navigate("/cart") : navigate("/login");
 
+    }
+    const wishlistRouteHandler = () => {
+        authState.token ? navigate("/wishlist") : navigate("/login");
     }
     return (
 <nav>
@@ -51,10 +59,11 @@ const Navbar = () => {
            {cart.length !== 0 ? <span className="badge-number">{cart.length}</span>: null }
         </div></li>
         <li className="badge">
-            <Link to="/Wishlist">
-            <i className="badge-icon fas fa-heart" aria-hidden="true"></i>
-            <span className="badge-number">0</span> 
-        </Link></li>
+        <div className="btn-check" onClick={wishlistRouteHandler}>
+            <i className="badge-icon far fa-heart"></i>
+            {wishlist.length !== 0 ? <span className="badge-number">{wishlist.length}</span>: null }
+           </div>
+        </li>
   
     </ul>
 </nav>
