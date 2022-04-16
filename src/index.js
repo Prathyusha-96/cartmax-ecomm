@@ -4,7 +4,8 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "./server";
 import { AuthProvider } from "./hooks/context/auth-context";
-import {FilterProvider} from "./hooks/context/filter-context";
+import { FilterProvider } from "./hooks/context/filter-context";
+import { CartProvider }  from "./hooks/context/cart-context";
 
 
 // Call make Server
@@ -14,9 +15,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <AuthProvider>
+    <CartProvider>
     <FilterProvider>
     <App/>
     </FilterProvider>
+    </CartProvider>
     </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
