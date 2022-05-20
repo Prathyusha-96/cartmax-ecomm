@@ -2,7 +2,7 @@ import React from "react"
 
 const CartItem = ({ cartId, cartImg, cartAlt, cartTitle, cartPrice, cartDiscount, cartQuantity, callRemoveFromCartHandler, callUpdateCartHandler, callMoveToWishlistHandler  }) => {
 return (
-     
+     <div className="example-div">
      <div className="cart-horizontal">
         <div className="cart-image">
           <img src={ cartImg } alt={cartAlt} className="img-responsive"/>
@@ -27,6 +27,7 @@ return (
             <button className="btn btn-primary" onClick={() => callMoveToWishlistHandler(cartId)}>Move to Wishlist</button>
             <button className="btn btn-secondary cart-remove-btn" onClick={() => callRemoveFromCartHandler(cartId)}>Remove From Cart</button>
           </div>
+        </div>
         </div>
         </div>
         

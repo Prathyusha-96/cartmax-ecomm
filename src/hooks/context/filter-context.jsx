@@ -12,7 +12,8 @@ const FilterProvider = ({ children }) => {
         womenAccessories: false,
         kidsClothing: false,
         ratingValue: "",
-        inStock: false
+        inStock: false,
+        rangeValue: 3000
     });
 
     return (

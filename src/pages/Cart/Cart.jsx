@@ -35,8 +35,9 @@ const Cart = () => {
 
     return (   
     
-      <div className="cart-container">
-        <main className="empty-cart  text-center">
+      <main className="cart-container">
+        <div className="example-div">
+        <div className="empty-cart">
       {cart.length !== 0 ?
        
        <>
@@ -78,9 +79,10 @@ const Cart = () => {
           <Link to="/products">
             <button className="btn btn-solid-primary btn-link-products">Start Shopping</button></Link>
         </>}
-        
-        </main>
         </div>
+        </div>
+        </main>
+       
        
       
       )

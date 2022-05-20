@@ -10,11 +10,11 @@ export default function Filter() {
           <div className="filter-price">
               <h4 className="filter-heading">Price</h4>
               <div className="filter-range">
-                  <p>50</p>
-                  <p>150</p>
-                  <p>200</p>
+                  <p>1000</p>
+                  <p>2000</p>
+                  <p>3000</p>
               </div>
-              <input className="slider" type="range" name="" min="50" max="200"/>
+              <input className="slider" type="range" name="" min="1000" max="3000"/>
           </div>
           <div className="filter-category">
               <h4 className="filter-heading">Category</h4>

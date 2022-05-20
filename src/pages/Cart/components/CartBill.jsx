@@ -2,9 +2,7 @@
 import React from "react";
 const CartBill = ({cartItem, itemPrice, cartAmount, cartDelivery, cartDiscount}) => {
     return (
-        
-       
-        <div className="bill-container">
+    <div className="bill-container">
         <div className="cart-vertical">
          <h3 className="cart-heading">Price details</h3>
          <hr/>
