@@ -7,7 +7,7 @@ import { Filter } from "./components/Filter";
 import { useFilter, useAuth, useCart, useWishlist } from "../../hooks";
 import { getProductsService } from "../../services";
 import { ProductCard } from "./components/ProductCard";
-
+import { toast } from "react-toastify";
 import { categoryFilter, priceFilter, sortData, inStockFilter, ratingFilter, addToCartHandler, addToWishlistHandler, removeFromWishlistHandler } from "../../utils";
 
 
@@ -34,6 +34,7 @@ const ProductListing = () => {
       }
       else {
         navigate("/login")
+        toast.warning("You are not logged in")
       }
     }
     const checkCartRouteHandler = (_id) => {
@@ -50,6 +51,7 @@ const ProductListing = () => {
       }
       else {
         navigate("/login")
+        toast.warning("You are not logged in")
       }
     }
   
