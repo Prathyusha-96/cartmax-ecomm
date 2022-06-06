@@ -1,8 +1,6 @@
 import React from "react";
-
+import './landingpage.css'
 import { Link } from "react-router-dom";
-
-
 import img1 from "../../assets/images/product6.jpg"
 import img2 from "../../assets/images/product2.jpg"
 import img3 from "../../assets/images/product5.jpg"
@@ -11,13 +9,9 @@ import img5 from "../../assets/images/product10.jpg"
 import img6 from "../../assets/images/product3.jpg"
 import img7 from "../../assets/images/product9.jpg"
 
-
-import './landingpage.css'
-
 export default function Landingpage() {
 return (
-
-        <div className="container">
+<div className="container">
          <section id="hero">
             <div className="hero-overlay hero-image">
               <div className="hero-content">
@@ -79,8 +73,7 @@ return (
             </section>
             </section>
           </div>
+)
 
-
-    )
 }
 
