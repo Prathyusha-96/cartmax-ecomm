@@ -2,7 +2,8 @@ import React from "react"
 
 const CartItem = ({ cartId, cartImg, cartAlt, cartTitle, cartPrice, cartDiscount, cartQuantity, callRemoveFromCartHandler, callUpdateCartHandler, callMoveToWishlistHandler  }) => {
 return (
-     <div className="example-div">
+  
+     <main className="cart-container">
      <div className="cart-horizontal">
         <div className="cart-image">
           <img src={ cartImg } alt={cartAlt} className="img-responsive"/>
@@ -29,7 +30,8 @@ return (
           </div>
         </div>
         </div>
-        </div>
+        </main>
+        
         
        
         
