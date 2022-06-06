@@ -2,17 +2,18 @@ import React from "react";
 import './auth.css'
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-import { useAuth } from "../../hooks/context/auth-context"
+import { useNavigate, Link  } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useAuth } from "../../hooks/context/auth-context";
+import { useCart } from "../../hooks/context/cart-context";
+import { useWishlist } from "../../hooks/context/wishlist-context";
 
  const  Login = () => {
    const navigate = useNavigate();
-
    const { authDispatch } = useAuth();
-
-   const[ user, setUser] = useState({
-       
+   const { cartDispatch } = useCart();
+    const { wishlistDispatch } = useWishlist();
+     const[ user, setUser] = useState({
        email: "",
        password: "",
    })
@@ -30,20 +31,39 @@ import { useAuth } from "../../hooks/context/auth-context"
    const guestUserHandler = (event) => {
        event.preventDefault();
        setUser(guestUser);
-   }
+   };
    const loginHandler = async (event) => {
-
-       event.preventDefault();
+    event.preventDefault();
        try {
         const response = await axios.post("/api/auth/login", user);
         if (response.status === 200) {
-  
+          
           localStorage.setItem("token", response.data.encodedToken);
           localStorage.setItem("user", JSON.stringify(response.data.foundUser));
+         
+          authDispatch({
+             type: "LOGIN", 
+             payload: { 
+             user: response.data.foundUser, 
+             token: response.data.encodedToken },
+             });
+
+      
+          
+        
+    //     } else {
+    //       throw new Error("Something went wrong! Please try again later");
+    //     }
+    //   } catch (error) {
+    //     toast.error(error.response.data.errors[0]);
+    //   } 
+    
+    // }  else {
+    //   toast.warning("Please enter Both the fields");
+    // }
   
-          authDispatch({ type: "LOG_IN", payload: { user: response.data.foundUser, token: response.data.encodedToken } })
-  
-          navigate("/");  
+          navigate("/"); 
+          toast.success("you are logged in") 
        }
        else if (response.status === 404) {
         alert("email not found");
@@ -58,9 +78,7 @@ import { useAuth } from "../../hooks/context/auth-context"
     catch (error) {
       console.log(error);
     }
-  }
-
-
+   }
     return (
 
     <main className="container">
@@ -116,7 +134,7 @@ import { useAuth } from "../../hooks/context/auth-context"
               </div>
             <div className="text-center">
             <span> Create New Account
-                     <Link to="/SignUp" className="login-link fw-400">SignUp</Link></span>
+              <Link to="/SignUp" className="login-link fw-400">SignUp</Link></span>
             </div>
            
         </div>
