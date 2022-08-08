@@ -1,6 +1,3 @@
-
-
-
 import img1 from '../../assets/images/product6.jpg'
 import img2 from '../../assets/images/product4.jpg'
 import img3 from '../../assets/images/product3.jpg'

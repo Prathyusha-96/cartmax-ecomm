@@ -14,7 +14,8 @@ const Filter = () => {
       <div className="filter">
         <div className="filter-head">
           <h4>Filters</h4>
-          <button className="text-underline clear-filters-btn gray-text" onClick = {() => dispatch({ type: "RESET", payload: {} })} >
+          <button className="text-underline clear-filters-btn gray-text" 
+          onClick = {() => dispatch({ type: "RESET", payload: {} })} >
           Clear
           </button>
           </div>

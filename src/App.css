@@ -1,4 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 :root {
+  --primary-color: #db2777;
+  --white:  #f5f1f1;
+  --grey:  #C4C4C480;
+  --bg-color:  #F7F7F7;
+  --grey-color:  #9A9A9A;
+  --secondary-color: #60a5fa;
+  --text-color: #282828;
+  --white-color: #fff;
+  --black: #333;
+  --grey-color: #999;
   --wishlist-hover-color: #f0e8e8;
   --toastify-color-info: #202528;
   --toastify-color-success: #558d14;

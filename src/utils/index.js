@@ -1,3 +1,5 @@
+export { getProductsHandler } from "./productsFiltersHandler/getProductsHandler";
+export { getCategoriesHandler } from "./productsFiltersHandler/getCtegoriesHandler";
 export { categoryFilter } from "./filters/categoryFilter";
 export { priceFilter } from "./filters/priceFilter";
 export { sortData }  from "./filters/sortData";

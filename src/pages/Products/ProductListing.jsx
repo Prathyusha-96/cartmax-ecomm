@@ -1,5 +1,4 @@
 import React from "react";
-
 import './ProductListing.css' 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +7,15 @@ import { useFilter, useAuth, useCart, useWishlist } from "../../hooks";
 import { getProductsService } from "../../services";
 import { ProductCard } from "./components/ProductCard";
 import { toast } from "react-toastify";
-import { categoryFilter, priceFilter, sortData, inStockFilter, ratingFilter, addToCartHandler, addToWishlistHandler, removeFromWishlistHandler } from "../../utils";
+import { 
+  categoryFilter, 
+  priceFilter, 
+  sortData, 
+  inStockFilter, 
+  ratingFilter, 
+  addToCartHandler,
+  addToWishlistHandler, 
+  removeFromWishlistHandler } from "../../utils";
 
 
 const ProductListing = () => {
@@ -21,7 +28,7 @@ const ProductListing = () => {
     const { token } = authState;
     const { cart } = cartState;
     const { wishlist } = wishlistState;
-    const { state}   = useFilter();
+    const { state }   = useFilter();
 
     const checkCartAction = (_id) => {
       const item = cart.find(item => item._id === _id);

@@ -13,7 +13,7 @@ const FilterProvider = ({ children }) => {
         kidsClothing: false,
         ratingValue: "",
         inStock: false,
-        rangeValue: 3000
+        rangeValue: 3000,
     });
 
     return (

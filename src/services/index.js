@@ -1,4 +1,5 @@
 export { getProductsService } from "./productServices/getProducts.services";
+export { getCategoriesService } from "./productServices/getCategories.services";
 export { getCartItemsService } from "./cartServices/getCartItems.services";
 export { addToCartService } from "./cartServices/addToCart.services";
 export { removeFromCartService } from "./cartServices/removeFromCart.services";
